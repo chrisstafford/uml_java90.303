@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stockservice;
 
 /**
- *
- * @author chris
+ * Interface for accessing StockQuotes from a given service
+ * 
+ * @author Christopher Stafford
  */
 public interface StockService {
     /**
