@@ -1,17 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stockservice;
 
 import java.util.MissingResourceException;
 
 /**
- *
- * @author chris
+ * A factory to that returns the correct concrete class implementation of the 
+ * StockService interface
+ * 
+ * @author Christopher Stafford
  */
 class StockServiceFactory {
+    /**
+     * 
+     * @param serviceName as <CODE>String</CODE>
+     * @return Correct concrete class for interface StockService 
+     */
     public static StockService getStockService(String serviceName) {
         if (serviceName == null) {
             throw new NullPointerException();

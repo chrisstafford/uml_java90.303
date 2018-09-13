@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stockservice;
 
 import java.math.BigDecimal;
@@ -10,11 +5,18 @@ import java.util.Date;
 import java.util.MissingResourceException;
 
 /**
- *
- * @author chris
+ * A concrete class that implementes the StockService interface
+ * 
+ * @author Christopher Stafford
  */
 public class BasicStockService implements StockService {
     
+    /**
+     * Method to get StockQuote from service
+     * 
+     * @param symbol The symobl of the stock to pull
+     * @return The full stock quote as <CODE> StockQuote </CODE>
+     */
     public StockQuote getQuote(String symbol) {
         StockQuote quote = new StockQuote(new Date(), new BigDecimal("342.1"), "APPL");
         
