@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.MissingResourceException;
 
 /**
- * A concrete class that implementes the StockService interface
+ * A concrete class that implements the StockService interface
  * 
  * @author Christopher Stafford
  */
