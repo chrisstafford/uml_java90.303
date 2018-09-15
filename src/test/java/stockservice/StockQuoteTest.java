@@ -43,60 +43,60 @@ public class StockQuoteTest {
     
     @Test
     public void testEqualsReflexive() {
-        assertTrue(quotex.equals(quotex));
+        assertTrue("Equals is reflexive", quotex.equals(quotex));
     }
     
     @Test
     public void testEqualsSymmetric() {
-        assertTrue(quotex.equals(quotey) && quotey.equals(quotex));
+        assertTrue("Equals is symmetric",quotex.equals(quotey) && quotey.equals(quotex));
     }
     
     @Test
     public void testEqualsTransitive() {
-        assertTrue(quotex.equals(quotey) && quotey.equals(quotez) && quotez.equals(quotex));
+        assertTrue("Equeals is transiitive", quotex.equals(quotey) && quotey.equals(quotez) && quotez.equals(quotex));
     }
     
     @Test
     public void testEqualsNonNull() {
-        assertFalse(quotex.equals(null));
+        assertFalse("Equals checks for nonNull", quotex.equals(null));
     }
     
     @Test
     public void testNotEquals() {
-        assertFalse(quotex.equals(quoten));
+        assertFalse("Equals finds not equals", quotex.equals(quoten));
     }
     
     
     @Test
     public void testHashCodeReflexive() {
-        assertTrue(quotex.hashCode() == quotex.hashCode());
+        assertTrue("Hashcode is reflexive",quotex.hashCode() == quotex.hashCode());
     }
     
     @Test
     public void testHashCodeSymmetric() {
-        assertTrue(quotex.hashCode() == quotey.hashCode());
+        assertTrue("Hashcode is symmetric", quotex.hashCode() == quotey.hashCode());
     }
     
     @Test
     public void testHashCodeTransitive() {
-        assertTrue(quotex.hashCode() == quotey.hashCode() 
+        assertTrue("Hashcode is transitive", quotex.hashCode() == quotey.hashCode()
                 && quotey.hashCode() == quotez.hashCode() 
                 && quotez.hashCode() == quotex.hashCode());
     }
     
     @Test
     public void testHashCodeNonZero() {
-        assertFalse(quotex.hashCode() == 0);
+        assertFalse("Hashcode is not zero", quotex.hashCode() == 0);
     }
     
     @Test
     public void testHashCodeDiff() {
-        assertFalse(quotex.hashCode() == quoten.hashCode());
+        assertFalse("Hashcode differs from object to object", quotex.hashCode() == quoten.hashCode());
     }
     
     @Test
     public void testToString() {
-        assertEquals(quotex.toString(), 
+        assertEquals("ToString produces the correct string", quotex.toString(),
             "dateRecorded=" + dateRecorded + 
             " stockPrice=" + stockPrice + 
             " stockSymbol=" + stockSymbol +"");
