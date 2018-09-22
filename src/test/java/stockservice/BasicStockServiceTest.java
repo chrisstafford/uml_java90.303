@@ -16,7 +16,7 @@ public class BasicStockServiceTest {
     
     @Before
     public void setup() {
-        service = StockServiceFactory.getStockService("Basic");
+        service = StockServiceFactory.getStockService();
     }
     
     @Test

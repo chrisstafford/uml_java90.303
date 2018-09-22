@@ -11,17 +11,10 @@ import java.util.MissingResourceException;
 class StockServiceFactory {
     /**
      * 
-     * @param serviceName as <CODE>String</CODE>
-     * @return Correct concrete class for interface StockService 
+     * @return Correct concrete class for interface StockService
      */
-    public static StockService getStockService(String serviceName) {
-        if (serviceName == null) {
-            throw new NullPointerException();
-        }
-        else if ( serviceName == "Basic") {
-            return new BasicStockService();
-        }
-        throw new MissingResourceException("Service not found", "StockServiceFactory", serviceName);
+    public static StockService getStockService() {
+        return new BasicStockService();
     }
     
 }

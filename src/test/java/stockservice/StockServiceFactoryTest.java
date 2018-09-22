@@ -21,15 +21,7 @@ public class StockServiceFactoryTest {
     @Test
     public void testGetStockServiceBasic() {
         StockService service = new BasicStockService();
-        
-        assertTrue("The BasicStockService was returned", StockServiceFactory.getStockService(serviceName) instanceof BasicStockService); 
+
+        assertTrue("The BasicStockService was returned", StockServiceFactory.getStockService() instanceof BasicStockService);
     }
-    
-    @Test (expected = MissingResourceException.class)
-    public void testGetStockServiceOther() {
-        StockServiceFactory.getStockService("Other");
-    }
-    
-    
-    
 }
