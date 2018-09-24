@@ -1,6 +1,7 @@
 package stockservice;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -15,7 +16,7 @@ import org.junit.Test;
 public class StockQuoteTest {
     private String stockSymbol;
     private BigDecimal stockPrice;
-    private Date dateRecorded;
+    private Calendar dateRecorded;
     private StockQuote quotex;
     private StockQuote quotey;
     private StockQuote quotez;
@@ -25,7 +26,7 @@ public class StockQuoteTest {
     public void setup() {
         stockSymbol = "APPL";
         stockPrice = new BigDecimal("347.1");
-        dateRecorded = new Date();
+        dateRecorded = Calendar.getInstance();
         quotex = new StockQuote(dateRecorded, stockPrice, stockSymbol);
         quotey = new StockQuote(dateRecorded, stockPrice, stockSymbol);
         quotez = new StockQuote(dateRecorded, stockPrice, stockSymbol);
