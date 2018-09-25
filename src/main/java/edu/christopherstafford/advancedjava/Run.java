@@ -19,6 +19,7 @@ public class Run {
      * @param date  The date in which the run was completed
      * @param time  The total time it took to complete the run
      * @param distance  The distance in miles as a <CODE> float </CODE>
+
      */
     public Run(LocalDate date, RunTime time, long distance) {
         this.date = date;
