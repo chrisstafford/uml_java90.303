@@ -1,7 +1,7 @@
 package stockservice;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * A class that models a Stock Quote
@@ -11,17 +11,17 @@ import java.util.Date;
 public class StockQuote {
     private String stockSymbol;
     private BigDecimal stockPrice;
-    private Date dateRecorded;
+    private Calendar dateRecorded;
     
     /**
      * Creates a new StockQuote instance
      * 
-     * @param dateRecorded The date in which the stock quote is from as <CODE> Date </CODE>
+     * @param dateRecorded The date in which the stock quote is from as <CODE> Calendar </CODE>
      * @param stockPrice The price of the stock as <CODE>BigDecimal</CODE>
      * @param stockSymbol The Symbol for the stock
      */
     
-    public StockQuote(Date dateRecorded, BigDecimal stockPrice, String stockSymbol) {
+    public StockQuote(Calendar dateRecorded, BigDecimal stockPrice, String stockSymbol) {
         this.dateRecorded = dateRecorded;
         this.stockPrice = stockPrice;
         this.stockSymbol = stockSymbol;
@@ -47,7 +47,7 @@ public class StockQuote {
      * 
      * @return the date the stock quote was requested and returned as <CODE>Date</CODE>
      */
-    public Date getDateRecorded() {
+    public Calendar getDateRecorded() {
         return dateRecorded;
     }
     
