@@ -17,14 +17,24 @@ public interface StockService {
      */
     StockQuote getQuote(String symbol);
 
-    /**
-     * Get a historical list of stock quotes for the provided
-     * symbol
+    /** Get a historical list of stock quotes for the
+     * provide symbol
      * @param symbol the stock symbol to search for
      * @param from the date of the first stock quote
-     * @param until  the date of the last stock quote
-     * @return a list of StockQuote instances.
-     * One for each day in the range specified.
+     * @param until the date of the last stock quote
+     * @return a list of StockQuote instances. One for each day in the range specified.
      */
-    List<StockQuote> getQuote(String symbol, Calendar from, Calendar until);
+    List<StockQuote> getQuote(String symbol, Calendar from,
+                              Calendar until);
+
+    /** Get a historical list of stock quotes for the
+     * provide symbol
+     * @param symbol the stock symbol to search for
+     * @param from the date of the first stock quote
+     * @param interval the number of StockQuotes to get. E.g. if Interval.DAILY was specified
+     *                one StockQuote per day will be returned.
+     * @return a list of StockQuote instances. One for each day in the range specified.
+     */
+    List<StockQuote> getQuote(String symbol, Calendar from,
+                              Calendar until, IntervalEnum interval);
 }
