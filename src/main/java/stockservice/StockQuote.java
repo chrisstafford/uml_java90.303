@@ -1,5 +1,8 @@
 package stockservice;
 
+import jdk.nashorn.internal.ir.annotations.Immutable;
+
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
@@ -8,6 +11,7 @@ import java.util.Calendar;
  * 
  * @author Christopher Stafford
  */
+@Immutable
 public class StockQuote {
     private String stockSymbol;
     private BigDecimal stockPrice;
@@ -21,7 +25,7 @@ public class StockQuote {
      * @param stockSymbol The Symbol for the stock
      */
     
-    public StockQuote(Calendar dateRecorded, BigDecimal stockPrice, String stockSymbol) {
+    public StockQuote(@NotNull Calendar dateRecorded, @NotNull BigDecimal stockPrice, @NotNull String stockSymbol) {
         this.dateRecorded = dateRecorded;
         this.stockPrice = stockPrice;
         this.stockSymbol = stockSymbol;

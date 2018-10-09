@@ -1,5 +1,6 @@
 package stockservice;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.*;
 
@@ -16,7 +17,7 @@ public class BasicStockService implements StockService {
      * @param symbol The symobl of the stock to pull
      * @return The full stock quote as <CODE> StockQuote </CODE>
      */
-    public StockQuote getQuote(String symbol) {
+    public StockQuote getQuote(@NotNull String symbol) {
         StockQuote quote = new StockQuote(Calendar.getInstance(), new BigDecimal("342.1"), "APPL");
         
         if (symbol == "APPL") {
@@ -36,7 +37,7 @@ public class BasicStockService implements StockService {
      * @return List<StockQuote> list of StockQuote objects that meet the requested criteria
      */
     @Override
-    public List<StockQuote> getQuote(String symbol, Calendar from, Calendar until) {
+    public List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, Calendar until) {
         StockQuote quote = new StockQuote(Calendar.getInstance(), new BigDecimal("342.1"), "APPL");
         List<StockQuote> quoteList = new ArrayList<StockQuote>();
 
@@ -56,7 +57,7 @@ public class BasicStockService implements StockService {
      * @return a list of StockQuote instances. One for each day in the range specified.
      */
     @Override
-    public List<StockQuote> getQuote(String symbol, Calendar from, Calendar until, IntervalEnum interval) {
+    public List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until, @NotNull IntervalEnum interval) {
         StockQuote quote = new StockQuote(Calendar.getInstance(), new BigDecimal("342.1"), "APPL");
         List<StockQuote> quoteList = new ArrayList<StockQuote>();
         switch (interval) {
